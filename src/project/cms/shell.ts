@@ -29,7 +29,7 @@ class CMSBlog extends ShellScript {
 
 	fontendStart() {
 		this.cd(this.backendPath);
-		this.exec('yarn start:server');
+		this.exec('yarn server:product');
 	}
 
 	fontednInstall() {
