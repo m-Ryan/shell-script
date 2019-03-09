@@ -1193,9 +1193,9 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-command-prompt@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/command-prompt/-/command-prompt-0.0.4.tgz#bab0d4bf68e5d44d8859e2d83704b0e1d99184d9"
+command-prompt@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/command-prompt/-/command-prompt-0.0.6.tgz#a56bb3879627e87c801f1fd930a9f7dcdabc861e"
   dependencies:
     "@types/inquirer" "^0.0.44"
     inquirer "^6.2.2"

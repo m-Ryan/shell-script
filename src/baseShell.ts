@@ -1,15 +1,13 @@
 import { exec, cd, echo, ExecOptions } from 'shelljs';
-import { ASSETS_PATH } from '../constant';
 
 export default class ShellScript {
 	gitAddress: string;
-	floderPath: string;
-	localPath: string;
+	floderPath: string; // 项目目录名称
+	localPath: string; // 项目所在地址
 
-	runExec(command: string, async = false) {
+	runExec(command: string, options?: ExecOptions) {
 		cd(this.localPath);
-		echo(command);
-		exec(command, { async });
+		exec(command, options);
 	}
 
 	clone() {
@@ -33,20 +31,18 @@ export default class ShellScript {
 	}
 
 	start() {
-		this.runExec(`cd fontend && yarn start`, true);
+		this.runExec(`yarn start`);
 	}
 
 	build() {
-		this.runExec(`cd fontend && yarn build`);
+		this.runExec(`yarn build`);
 	}
 
 	cd(command: string) {
-		echo(command);
 		cd(command);
 	}
 
 	exec(command: string, options?: ExecOptions) {
-		echo(command);
 		exec(command, options);
 	}
 

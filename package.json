@@ -1,6 +1,6 @@
 {
   "name": "sell-script",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "description",
   "author": "ryan",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "@types/commander": "^2.12.2",
     "@types/inquirer": "^0.0.44",
     "@types/shelljs": "^0.8.3",
-    "command-prompt": "^0.0.4",
+    "command-prompt": "^0.0.6",
     "commander": "^2.19.0",
     "inquirer": "^6.2.2",
     "reflect-metadata": "^0.1.12",

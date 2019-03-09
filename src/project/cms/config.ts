@@ -10,8 +10,9 @@ const CMSConfig = {
 		},
 		{
 			name: '初始化项目',
-			method() {
+			method(again: () => void) {
 				CMSBlog.initStall();
+				again();
 			}
 		},
 		{

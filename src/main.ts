@@ -1,6 +1,6 @@
 import commandPrompt from 'command-prompt';
-import { IBaseQuestion } from './interface/promptItem.interface';
 import CMSConfig from './project/cms/config';
+import { IBaseQuestion } from 'command-prompt/dist/command-prompt.interface';
 const question: IBaseQuestion = {
 	name: '选择你要进行的项目',
 	choices: [
