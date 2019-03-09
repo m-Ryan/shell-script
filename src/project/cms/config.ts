@@ -15,6 +15,12 @@ const CMSConfig = {
 			}
 		},
 		{
+			name: '获取更新',
+			method() {
+				CMSBlog.pull();
+			}
+		},
+		{
 			name: '后端安装依赖',
 			method() {
 				CMSBlog.backendInstall();
