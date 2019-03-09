@@ -28,7 +28,7 @@ class CMSBlog extends ShellScript {
 	}
 
 	fontendStart() {
-		this.cd(this.backendPath);
+		this.cd(this.fontendPath);
 		this.exec('yarn server:product');
 	}
 
@@ -39,9 +39,9 @@ class CMSBlog extends ShellScript {
 
 	initStall() {
 		this.cd(this.backendPath);
-		this.exec('yarn', { async: false });
+		this.exec('yarn');
 		this.cd(this.fontendPath);
-		this.exec('yarn', { async: false });
+		this.exec('yarn');
 	}
 
 	start() {
