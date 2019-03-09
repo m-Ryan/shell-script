@@ -26,11 +26,11 @@ class CMSBlog extends baseShell_1.default {
     }
     backendStart() {
         this.cd(this.backendPath);
-        this.exec('pm2 server:product');
+        this.exec('yarn server:product');
     }
     fontendStart() {
         this.cd(this.backendPath);
-        this.exec('pm2 start:server');
+        this.exec('yarn server:product');
     }
     fontednInstall() {
         this.cd(this.fontendPath);
