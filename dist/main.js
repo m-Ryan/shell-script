@@ -13,49 +13,7 @@ const question = {
     ]
 };
 function bootstrap() {
-    command_prompt_1.default({
-        name: 'choose your project',
-        choices: [
-            {
-                name: 'project1',
-                choices: [
-                    {
-                        name: 'clone project',
-                        method() {
-                            console.log('git clone.....');
-                        }
-                    },
-                    {
-                        name: 'fetch project',
-                        method() {
-                            console.log('git fetch.....');
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'project2',
-                choices: [
-                    {
-                        name: 'clone project',
-                        method() {
-                            console.log('git clone.....');
-                        }
-                    },
-                    {
-                        name: 'fetch project',
-                        method() {
-                            console.log('git fetch.....');
-                        }
-                    }
-                ]
-            },
-            {
-                name: 'exit',
-                method: () => process.exit()
-            }
-        ]
-    });
+    command_prompt_1.default(question);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
