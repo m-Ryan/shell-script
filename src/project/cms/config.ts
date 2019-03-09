@@ -35,7 +35,7 @@ const CMSConfig = {
 		{
 			name: '前后端发布',
 			method() {
-				CMSBlog.backendStart();
+				CMSBlog.start();
 			}
 		},
 		{
