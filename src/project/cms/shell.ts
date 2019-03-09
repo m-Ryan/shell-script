@@ -24,12 +24,12 @@ class CMSBlog extends ShellScript {
 
 	backendStart() {
 		this.cd(this.backendPath);
-		this.exec('pm2 server:product');
+		this.exec('yarn server:product');
 	}
 
 	fontendStart() {
 		this.cd(this.backendPath);
-		this.exec('pm2 start:server');
+		this.exec('yarn start:server');
 	}
 
 	fontednInstall() {
