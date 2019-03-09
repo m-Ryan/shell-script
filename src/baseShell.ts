@@ -7,6 +7,7 @@ export default class ShellScript {
 
 	runExec(command: string, options?: ExecOptions) {
 		cd(this.localPath);
+		echo(command);
 		exec(command, options);
 	}
 

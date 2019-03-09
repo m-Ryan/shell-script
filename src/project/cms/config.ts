@@ -17,8 +17,9 @@ const CMSConfig = {
 		},
 		{
 			name: '获取更新',
-			method() {
+			method(again: () => void) {
 				CMSBlog.pull();
+				again();
 			}
 		},
 		{
