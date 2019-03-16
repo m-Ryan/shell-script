@@ -12,8 +12,16 @@ const CMSConfig = {
         },
         {
             name: '初始化项目',
-            method() {
+            method(again) {
                 shell_1.default.initStall();
+                again();
+            }
+        },
+        {
+            name: '获取更新',
+            method(again) {
+                shell_1.default.pull();
+                again();
             }
         },
         {
@@ -31,7 +39,7 @@ const CMSConfig = {
         {
             name: '前后端发布',
             method() {
-                shell_1.default.backendStart();
+                shell_1.default.start();
             }
         },
         {

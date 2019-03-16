@@ -1,7 +1,7 @@
-import ShellScript from '../../script/baseShell';
+import ShellScript from '../../baseShell';
 declare class CMSBlog extends ShellScript {
     gitAddress: string;
-    floderPath: string;
+    floderName: string;
     localPath: string;
     fontendPath: string;
     backendPath: string;

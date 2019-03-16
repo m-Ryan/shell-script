@@ -1,5 +1,5 @@
 import manager from './shell';
-const CMSConfig = {
+const ManagerConfig = {
 	name: 'cms内容管理系统',
 	choices: [
 		{
@@ -37,4 +37,4 @@ const CMSConfig = {
 	]
 };
 
-export default CMSConfig;
+export default ManagerConfig;

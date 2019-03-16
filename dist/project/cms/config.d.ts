@@ -2,7 +2,7 @@ declare const CMSConfig: {
     name: string;
     choices: {
         name: string;
-        method(): void;
+        method(again: () => void): void;
     }[];
 };
 export default CMSConfig;

@@ -2,10 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const command_prompt_1 = require("command-prompt");
 const config_1 = require("./project/cms/config");
+const config_2 = require("project/manager/config");
 const question = {
     name: '选择你要进行的项目',
     choices: [
         config_1.default,
+        config_2.default,
         {
             name: 'exit',
             method: () => process.exit()
