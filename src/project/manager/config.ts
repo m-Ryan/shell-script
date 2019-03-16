@@ -1,6 +1,6 @@
 import manager from './shell';
 const ManagerConfig = {
-	name: 'cms内容管理系统',
+	name: '项目web管理',
 	choices: [
 		{
 			name: '克隆项目到目录',
