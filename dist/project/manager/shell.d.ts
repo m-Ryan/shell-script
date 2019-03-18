@@ -1,12 +1,13 @@
 import ShellScript from '../../baseShell';
-declare class Manager extends ShellScript {
+declare class Shell extends ShellScript {
     gitAddress: string;
     floderName: string;
     localPath: string;
     fontendPath: string;
-    backendPath: string;
+    pullFontend(): void;
+    cloneFontend(): void;
     clone(): void;
-    start(): void;
+    reset(): void;
 }
-declare const manager: Manager;
-export default manager;
+declare const _default: Shell;
+export default _default;

@@ -4,14 +4,25 @@ const baseShell_1 = require("../../baseShell");
 const constant_1 = require("./constant");
 const constant_2 = require("../../constant");
 const fs = require("fs");
-class Manager extends baseShell_1.default {
+class Shell extends baseShell_1.default {
     constructor() {
         super(...arguments);
-        this.gitAddress = constant_1.GIT_ADDRESS;
-        this.floderName = constant_1.FLODER_NAME;
-        this.localPath = constant_2.ASSETS_PATH + constant_1.FLODER_NAME;
-        this.fontendPath = constant_2.ASSETS_PATH + constant_1.FLODER_NAME + '/fontend';
-        this.backendPath = constant_2.ASSETS_PATH + constant_1.FLODER_NAME + '/backend';
+        this.gitAddress = constant_1.BACKEND_GIT_ADDRESS;
+        this.floderName = constant_1.BACKEND_FLODER_NAME;
+        this.localPath = constant_2.ASSETS_PATH + constant_1.BACKEND_FLODER_NAME;
+        this.fontendPath = constant_2.ASSETS_PATH + constant_1.FONTEND_FLODER_NAME;
+    }
+    pullFontend() {
+        this.cd(this.fontendPath);
+        this.exec('git pull');
+    }
+    cloneFontend() {
+        if (fs.existsSync(this.fontendPath)) {
+            this.echo('该目录已有项目');
+            return;
+        }
+        this.cd(this.fontendPath);
+        this.exec(`git clone ${this.gitAddress} ${this.fontendPath}`);
     }
     clone() {
         if (fs.existsSync(this.localPath)) {
@@ -20,10 +31,9 @@ class Manager extends baseShell_1.default {
         }
         this.runExec(`git clone ${this.gitAddress} ${this.localPath}`);
     }
-    start() {
-        this.runExec('yarn server:product');
+    reset() {
+        this.runExec('git reset --heart');
     }
 }
-const manager = new Manager();
-exports.default = manager;
+exports.default = new Shell();
 //# sourceMappingURL=shell.js.map
