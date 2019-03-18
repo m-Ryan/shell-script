@@ -1,31 +1,50 @@
-import manager from './shell';
-const ManagerConfig = {
-	name: '项目web管理',
+import shell from './shell';
+const Manager = {
+	name: 'project-manager-web',
 	choices: [
 		{
-			name: '克隆项目到目录',
+			name: '克隆前端项目到目录',
 			method() {
-				manager.clone();
+				shell.clone();
 			}
 		},
 		{
-			name: '安装依赖',
+			name: '克隆后端项目到目录',
+			method() {
+				shell.clone();
+			}
+		},
+		{
+			name: '初始化项目',
 			method(again: () => void) {
-				manager.install();
+				shell.install();
 				again();
 			}
 		},
 		{
-			name: '获取更新',
+			name: '拉取前端静态资源',
 			method(again: () => void) {
-				manager.pull();
+				shell.pull();
 				again();
 			}
 		},
 		{
-			name: '项目发布',
+			name: '获取后端更新',
+			method(again: () => void) {
+				shell.pull();
+				again();
+			}
+		},
+		{
+			name: '发布',
 			method() {
-				manager.start();
+				shell.start();
+			}
+		},
+		{
+			name: '重置分支',
+			method() {
+				shell.reset();
 			}
 		},
 		{
@@ -37,4 +56,4 @@ const ManagerConfig = {
 	]
 };
 
-export default ManagerConfig;
+export default Manager;

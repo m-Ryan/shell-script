@@ -1,13 +1,26 @@
 import ShellScript from '../../baseShell';
-import { GIT_ADDRESS, FLODER_NAME } from './constant';
+import { BACKEND_GIT_ADDRESS, FONTEND_FLODER_NAME, BACKEND_FLODER_NAME } from './constant';
 import { ASSETS_PATH } from '../../constant';
 import * as fs from 'fs';
-class Manager extends ShellScript {
-	gitAddress: string = GIT_ADDRESS;
-	floderName: string = FLODER_NAME;
-	localPath: string = ASSETS_PATH + FLODER_NAME;
-	fontendPath: string = ASSETS_PATH + FLODER_NAME + '/fontend';
-	backendPath: string = ASSETS_PATH + FLODER_NAME + '/backend';
+class Shell extends ShellScript {
+	gitAddress: string = BACKEND_GIT_ADDRESS;
+	floderName: string = BACKEND_FLODER_NAME;
+	localPath: string = ASSETS_PATH + BACKEND_FLODER_NAME;
+	fontendPath: string = ASSETS_PATH + FONTEND_FLODER_NAME;
+
+	pullFontend() {
+		this.cd(this.fontendPath);
+		this.exec('git pull');
+	}
+
+	cloneFontend() {
+		if (fs.existsSync(this.fontendPath)) {
+			this.echo('该目录已有项目');
+			return;
+		}
+		this.cd(this.fontendPath);
+		this.exec(`git clone ${this.gitAddress} ${this.fontendPath}`);
+	}
 
 	clone() {
 		if (fs.existsSync(this.localPath)) {
@@ -17,10 +30,9 @@ class Manager extends ShellScript {
 		this.runExec(`git clone ${this.gitAddress} ${this.localPath}`);
 	}
 
-	start() {
-		this.runExec('yarn server:product');
+	reset() {
+		this.runExec('git reset --heart');
 	}
 }
 
-const manager =  new Manager();
-export default manager;
+export default new Shell();
