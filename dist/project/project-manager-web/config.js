@@ -2,10 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const shell_1 = require("./shell");
 const CMSConfig = {
-    name: 'cms内容管理系统',
+    name: 'project-manager-web',
     choices: [
         {
-            name: '克隆项目到目录',
+            name: '克隆前端项目到目录',
+            method() {
+                shell_1.default.clone();
+            }
+        },
+        {
+            name: '克隆后端项目到目录',
             method() {
                 shell_1.default.clone();
             }
@@ -13,45 +19,34 @@ const CMSConfig = {
         {
             name: '初始化项目',
             method(again) {
-                shell_1.default.initStall();
+                shell_1.default.install();
                 again();
             }
         },
         {
-            name: '获取更新',
+            name: '拉取前端静态资源',
             method(again) {
                 shell_1.default.pull();
                 again();
             }
         },
         {
-            name: '后端安装依赖',
-            method() {
-                shell_1.default.backendInstall();
+            name: '获取后端更新',
+            method(again) {
+                shell_1.default.pull();
+                again();
             }
         },
         {
-            name: '前端安装依赖',
-            method() {
-                shell_1.default.fontednInstall();
-            }
-        },
-        {
-            name: '前后端发布',
+            name: '发布',
             method() {
                 shell_1.default.start();
             }
         },
         {
-            name: '后端发布',
+            name: '重置分支',
             method() {
-                shell_1.default.backendStart();
-            }
-        },
-        {
-            name: '前端发布',
-            method() {
-                shell_1.default.fontendStart();
+                shell_1.default.reset();
             }
         },
         {

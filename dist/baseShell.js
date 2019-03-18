@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const shelljs_1 = require("shelljs");
 class ShellScript {
-    runExec(command, async = false) {
+    runExec(command, options) {
         shelljs_1.cd(this.localPath);
         shelljs_1.echo(command);
-        shelljs_1.exec(command, { async });
+        shelljs_1.exec(command, options);
     }
     clone() {
         this.runExec(`git clone ${this.gitAddress} ${this.localPath}`);
@@ -23,17 +23,15 @@ class ShellScript {
         this.runExec(`git push`);
     }
     start() {
-        this.runExec(`cd fontend && yarn start`, true);
+        this.runExec(`yarn start`);
     }
     build() {
-        this.runExec(`cd fontend && yarn build`);
+        this.runExec(`yarn build`);
     }
     cd(command) {
-        shelljs_1.echo(command);
         shelljs_1.cd(command);
     }
     exec(command, options) {
-        shelljs_1.echo(command);
         shelljs_1.exec(command, options);
     }
     echo(command) {

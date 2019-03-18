@@ -3,7 +3,7 @@ export default class ShellScript {
     gitAddress: string;
     floderPath: string;
     localPath: string;
-    runExec(command: string, async?: boolean): void;
+    runExec(command: string, options?: ExecOptions): void;
     clone(): void;
     install(): void;
     fetch(): void;
