@@ -1,11 +1,11 @@
 import shell from './shell';
 const Manager = {
-	name: 'project-manager-web',
+	name: 'project-manager',
 	choices: [
 		{
 			name: '克隆前端项目到目录',
 			method() {
-				shell.clone();
+				shell.cloneFontend();
 			}
 		},
 		{
@@ -24,7 +24,7 @@ const Manager = {
 		{
 			name: '拉取前端静态资源',
 			method(again: () => void) {
-				shell.pull();
+				shell.pullFontend();
 				again();
 			}
 		},
