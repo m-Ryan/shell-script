@@ -22,6 +22,10 @@ class Shell extends ShellScript {
 		this.exec(`git clone ${this.gitAddress} ${this.fontendPath}`);
 	}
 
+	start() {
+		this.runExec('yarn server:product');
+	}
+
 	clone() {
 		if (fs.existsSync(this.localPath)) {
 			this.echo('该目录已有项目');
